@@ -24,8 +24,8 @@ import { Security } from "./pages/Security";
 
 const HomeView = lazy(() => import("./pages/Home"));
 
-// const CartView = lazy(() => import("./pages/cart/Cart"));
-// const CheckoutView = lazy(() => import("./pages/cart/Checkout"));
+const CartView = lazy(() => import("./pages/Cart"));
+const CheckoutView = lazy(() => import("./pages/Checkout"));
 // const DocumentationView = lazy(() => import("./pages/Documentation"));
 
 // const InternalServerErrorView = lazy(() => import("./pages/pages/500"));
@@ -54,11 +54,11 @@ const App = () => {
           <Route path="" element={<ProductList allproducts={products} />} />
           <Route path="product/detail/:id" element={<ProductDetail allproducts={products} shoppingCart={shoppingCart} updateCount={setCount} />} />
           <Route path="category/:cat" element={<ProductList allproducts={products} />} />
-
-
-
-          {/* <Route path="cart" element={<CartView shoppingCart={shoppingCart} updateCount={setCount} />} />
+          <Route path="cart" element={<CartView shoppingCart={shoppingCart} updateCount={setCount} />} />
           <Route path="checkout" element={<CheckoutView shoppingCart={shoppingCart} count={count} />} />
+
+
+          {/*
           <Route path="documentation" element={<DocumentationView />} />
           <Route path="contact-us" element={<ContactUsView />} />
           <Route path="support" element={<SupportView />} />

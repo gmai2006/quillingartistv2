@@ -1,41 +1,33 @@
-import React from "react";
-import { Field, reduxForm } from "redux-form";
-import { compose } from "redux";
-import renderFormField from "../../helpers/renderFormField";
-import {
-  required,
-} from "../../helpers/validation";
+import { useState } from "react";
+import { Tag } from "lucide-react";
 
-const CouponApplyForm = (props) => {
-  const { handleSubmit, submitting, onSubmit, submitFailed } = props;
+export default function CouponApplyForm({ onSubmit }) {
+  const [coupon, setCoupon] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit({ coupon });
+  };
+
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className={`needs-validation ${submitFailed ? "was-validated" : ""}`}
-      noValidate
-      >
-      <Field
-        name="coupon"
-        type="text"
-        label="Have coupon?"
-        component={renderFormField}
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <label className="flex items-center gap-2 text-sm font-medium">
+        <Tag size={16} />
+        Have coupon?
+      </label>
+
+      <input
+        value={coupon}
+        onChange={(e) => setCoupon(e.target.value)}
         placeholder="Coupon code"
-        validate={[required]}
-              required={true}
+        className="w-full rounded-lg border px-3 py-2"
       />
-      <button
-        type="submit"
-        className="btn btn-sm btn-primary mt-3 float-right"
-        disabled={submitting}
-      >
-        Apply
-      </button>
+
+      <div className="flex justify-end">
+        <button className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+          Apply
+        </button>
+      </div>
     </form>
   );
-};
-
-export default compose(
-  reduxForm({
-    form: "couponapplyform",
-  })
-)(CouponApplyForm);
+}
