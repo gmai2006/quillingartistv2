@@ -14,7 +14,7 @@ import ReturnPolicy from "./pages/ReturnPolicy";
 import TermUse from "./pages/TermUse";
 import { ShoppingCart } from "./models/Shoppingcart";
 
-// import SearchResult from "./pages/SearchResult";
+import SearchResult from "./pages/SearchResult";
 import { Security } from "./pages/Security";
 
 
@@ -64,8 +64,7 @@ const App = () => {
           <Route path="term" element={<TermUse />} />
           <Route path="security" element={<Security />} />
           <Route path="500" element={<InternalServerErrorView />} />
-          {/*
-          <Route path="searchResult" element={<SearchResult allproducts={products} searchData={searchData} />} /> */}
+          <Route path="searchResult" element={<SearchResult allproducts={products} searchData={searchData} />} />
           <Route element={<NotFoundView />} />
         </Routes>
       </Suspense>
