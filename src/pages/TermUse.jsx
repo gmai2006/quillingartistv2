@@ -1,14 +1,42 @@
-import React from 'react';
+import React from "react";
+import { FileText } from "lucide-react";
 
 const TermUse = () => {
-    return <div className='putMargin'>
-        <h1>TERM OF USE</h1>
-        The Quilling Art  Website located at WA is a copyrighted work belonging to Website Name. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.
+  return (
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="flex items-center gap-3 mb-6">
+        <FileText className="w-7 h-7 text-gray-700" />
+        <h1 className="text-3xl font-bold tracking-tight">Terms of Use</h1>
+      </div>
 
-All such additional terms, guidelines, and rules are incorporated by reference into these Terms.
+      <div className="space-y-6 text-gray-700 leading-relaxed">
+        <p>
+          The Quilling Art website located in Washington is a copyrighted work
+          belonging to Quilling Art. Certain features of the site may be
+          subject to additional guidelines, terms, or rules that will be posted
+          on the site in connection with those features.
+        </p>
 
-These Terms of Use described the legally binding terms and conditions that oversee your use of the Site. BY LOGGING INTO THE SITE, YOU ARE BEING COMPLIANT THAT THESE TERMS and you represent that you have the authority and capacity to enter into these Terms. YOU SHOULD BE AT LEAST 18 YEARS OF AGE TO ACCESS THE SITE. IF YOU DISAGREE WITH ALL OF THE PROVISION OF THESE TERMS, DO NOT LOG INTO AND/OR USE THE SITE.
-  </div>;
+        <p>
+          All such additional terms, guidelines, and rules are incorporated by
+          reference into these Terms of Use.
+        </p>
+
+        <p>
+          These Terms of Use describe the legally binding terms and conditions
+          that govern your use of the site. By logging into the site, you agree
+          to comply with these terms and represent that you have the authority
+          and capacity to enter into them.
+        </p>
+
+        <p className="font-semibold">
+          You must be at least 18 years of age to access the site. If you
+          disagree with any of the provisions of these terms, do not log in or
+          use the site.
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default TermUse;

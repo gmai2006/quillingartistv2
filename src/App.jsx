@@ -28,7 +28,7 @@ const CartView = lazy(() => import("./pages/Cart"));
 const CheckoutView = lazy(() => import("./pages/Checkout"));
 const DocumentationView = lazy(() => import("./pages/Documentation"));
 
-// const InternalServerErrorView = lazy(() => import("./pages/500"));
+const InternalServerErrorView = lazy(() => import("./pages/500"));
 const ContactUsView = lazy(() => import("./pages/ContactUs"));
 const SupportView = lazy(() => import("./pages/Support"));
 
@@ -59,11 +59,12 @@ const App = () => {
           <Route path="documentation" element={<DocumentationView />} />
           <Route path="contact-us" element={<ContactUsView />} />
           <Route path="support" element={<SupportView />} />
-          {/*
           <Route path="return" element={<ReturnPolicy />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="term" element={<TermUse />} />
           <Route path="security" element={<Security />} />
+
+          {/*
           <Route path="500" element={<InternalServerErrorView />} />
           <Route path="searchResult" element={<SearchResult allproducts={products} searchData={searchData} />} /> */}
           <Route element={<NotFoundView />} />

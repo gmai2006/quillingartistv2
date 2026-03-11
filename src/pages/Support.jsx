@@ -1,10 +1,10 @@
-import { lazy } from "react";
+import React, { lazy } from "react";
 import { Link } from "react-router-dom";
 import {
-  BookCheck,
-  MessageSquareText,
+  BookOpen,
+  MessageSquare,
   Newspaper,
-  UserSquare,
+  User,
   Receipt,
   Calculator,
   ShoppingCart,
@@ -14,101 +14,116 @@ const Search = lazy(() => import("../components/Search"));
 
 export default function SupportView() {
   return (
-    <>
-      {/* Hero */}
-      <div className="bg-gray-900 py-12 text-center text-white">
-        <h1 className="mb-6 text-3xl font-semibold">
+    <div>
+
+      {/* HERO */}
+      <div className="bg-gray-900 text-white py-12 text-center">
+        <h1 className="text-3xl font-semibold mb-6">
           How can we help you today?
         </h1>
 
-        <div className="mx-auto max-w-2xl px-4">
+        <div className="max-w-2xl mx-auto px-4">
           <Search />
         </div>
       </div>
 
-      {/* Top Support Cards */}
-      <div className="bg-gray-100 py-6">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-3">
-          <SupportCard
-            icon={BookCheck}
-            title="Knowledge Base"
-            description="40 Articles / 12 Categories"
-          />
+      {/* TOP SUPPORT CARDS */}
+      <div className="bg-gray-100 py-8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
 
-          <SupportCard
-            icon={MessageSquareText}
-            title="Forums"
-            description="10 Topics / 7 Posts"
-          />
+          <div className="bg-white p-6 rounded-lg shadow flex items-center gap-4">
+            <BookOpen className="w-8 h-8 text-yellow-500" />
+            <div>
+              <h3 className="font-semibold">Knowledge Base</h3>
+              <p className="text-sm text-gray-500">
+                40 Articles / 12 Categories
+              </p>
+            </div>
+          </div>
 
-          <SupportCard
-            icon={Newspaper}
-            title="News"
-            description="15 Posts / 12 Categories"
-          />
+          <div className="bg-white p-6 rounded-lg shadow flex items-center gap-4">
+            <MessageSquare className="w-8 h-8 text-green-500" />
+            <div>
+              <h3 className="font-semibold">Forums</h3>
+              <p className="text-sm text-gray-500">
+                10 Topics / 7 Posts
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow flex items-center gap-4">
+            <Newspaper className="w-8 h-8 text-red-500" />
+            <div>
+              <h3 className="font-semibold">News</h3>
+              <p className="text-sm text-gray-500">
+                15 Posts / 12 Categories
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      {/* Support Sections */}
-      <div className="mx-auto max-w-6xl px-4 py-6">
-        <div className="grid gap-6 md:grid-cols-4">
-          <SupportList
-            icon={UserSquare}
-            title="My Account"
-          />
+      {/* SUPPORT CATEGORIES */}
+      <div className="max-w-6xl mx-auto py-10 grid md:grid-cols-4 gap-6 px-4">
 
-          <SupportList
-            icon={Receipt}
-            title="Charges & Refunds"
-          />
+        {/* ACCOUNT */}
+        <SupportCard
+          icon={<User className="w-7 h-7 text-blue-500" />}
+          title="My Account"
+        />
 
-          <SupportList
-            icon={Calculator}
-            title="Accounting & Taxes"
-          />
+        {/* REFUNDS */}
+        <SupportCard
+          icon={<Receipt className="w-7 h-7 text-yellow-500" />}
+          title="Charges & Refunds"
+        />
 
-          <SupportList
-            icon={ShoppingCart}
-            title="Cart"
-          />
-        </div>
+        {/* ACCOUNTING */}
+        <SupportCard
+          icon={<Calculator className="w-7 h-7 text-red-500" />}
+          title="Accounting & Taxes"
+        />
+
+        {/* CART */}
+        <SupportCard
+          icon={<ShoppingCart className="w-7 h-7 text-green-500" />}
+          title="Cart"
+        />
+
       </div>
-    </>
-  );
-}
 
-function SupportCard({ icon: Icon, title, description }) {
-  return (
-    <div className="flex items-center gap-4 rounded-lg bg-white p-6 shadow-sm">
-      <Icon className="text-yellow-500" size={36} />
-
-      <div>
-        <h3 className="font-semibold">{title}</h3>
-        <p className="text-sm text-gray-500">{description}</p>
-      </div>
     </div>
   );
 }
 
-function SupportList({ icon: Icon, title }) {
+function SupportCard({ icon, title }) {
   return (
-    <div className="rounded-lg border bg-white p-4">
-      <div className="mb-3 text-center">
-        <Icon size={32} className="mx-auto text-blue-500" />
-        <div className="mt-2 font-semibold">{title}</div>
+    <div className="border rounded-lg overflow-hidden">
+
+      <div className="text-center py-6 border-b">
+        <div className="flex justify-center mb-2">{icon}</div>
+        <h3 className="font-semibold">{title}</h3>
       </div>
 
-      <div className="flex flex-col divide-y">
-        {[1,2,3,4,5].map((i) => (
-          <Link
-            key={i}
-            to="/"
-            className="py-2 text-sm hover:text-blue-600"
-          >
-            Cras justo odio
-          </Link>
-        ))}
+      <div className="flex flex-col">
+        <Link to="/" className="px-4 py-2 hover:bg-gray-50 text-sm">
+          Cras justo odio
+        </Link>
+        <Link to="/" className="px-4 py-2 hover:bg-gray-50 text-sm">
+          Dapibus ac facilisis in
+        </Link>
+        <Link to="/" className="px-4 py-2 hover:bg-gray-50 text-sm">
+          Morbi leo risus
+        </Link>
+        <Link to="/" className="px-4 py-2 hover:bg-gray-50 text-sm">
+          Porta ac consectetur ac
+        </Link>
+        <Link to="/" className="px-4 py-2 hover:bg-gray-50 text-sm">
+          Vestibulum at eros
+        </Link>
       </div>
+
     </div>
   );
 }
