@@ -63,9 +63,8 @@ const App = () => {
           <Route path="privacy" element={<Privacy />} />
           <Route path="term" element={<TermUse />} />
           <Route path="security" element={<Security />} />
-
-          {/*
           <Route path="500" element={<InternalServerErrorView />} />
+          {/*
           <Route path="searchResult" element={<SearchResult allproducts={products} searchData={searchData} />} /> */}
           <Route element={<NotFoundView />} />
         </Routes>

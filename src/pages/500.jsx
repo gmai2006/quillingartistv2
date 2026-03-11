@@ -1,20 +1,25 @@
 import React, { lazy } from "react";
-import { ReactComponent as IconBugFill } from "bootstrap-icons/icons/bug-fill.svg";
-const Search = lazy(() => import("../../components/Search"));
+import { Bug } from "lucide-react";
+
+const Search = lazy(() => import("../components/Search"));
 
 export default function InternalServerErrorView() {
   return (
-    <div className="container text-center p-5">
-      <div className="display-1">
-        <IconBugFill className="i-va text-warning" />
-        500
+    <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-16">
+
+      <div className="flex items-center gap-4 text-yellow-500 mb-4">
+        <Bug className="w-16 h-16" />
+        <span className="text-6xl font-bold">500</span>
       </div>
-      <h1 className="mb-3">Internal Server Error</h1>
-      <div className="row justify-content-md-center">
-        <div className="col-md-6">
-          <Search />
-        </div>
+
+      <h1 className="text-2xl font-semibold mb-6">
+        Internal Server Error
+      </h1>
+
+      <div className="w-full max-w-md">
+        <Search />
       </div>
+
     </div>
   );
 }
