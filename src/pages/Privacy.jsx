@@ -3,39 +3,52 @@ import { ShieldCheck } from "lucide-react";
 
 const Privacy = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="flex items-center gap-3 mb-6">
-        <ShieldCheck className="w-7 h-7 text-gray-700" />
-        <h1 className="text-3xl font-bold tracking-tight">Privacy</h1>
-      </div>
+    <div className="min-h-screen flex flex-col bg-white">
+      <main className="flex-1 w-full">
+        <div className="max-w-3xl mx-auto px-6 py-14 md:px-8 md:py-20">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
+              <ShieldCheck className="w-6 h-6 text-gray-700" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+              Privacy
+            </h1>
+          </div>
 
-      <div className="space-y-4 text-gray-700 leading-relaxed">
-        <p>
-          At QuillingArtist.com, we value your privacy and are committed to
-          protecting your personal information. When you visit our website or
-          make a purchase, we may collect details like your name, email address,
-          shipping address, and payment information to process orders and
-          provide customer support.
-        </p>
+          <div className="space-y-8 text-[18px] md:text-[19px] leading-9 text-gray-700">
+            <p>
+              At QuillingArtist.com, we are committed to protecting your privacy.
+              We collect only the information necessary to process and fulfill
+              your order.
+            </p>
 
-        <p>
-          This information is securely stored and used only for the purposes
-          outlined in this policy. We may also use cookies and tracking
-          technologies to enhance your shopping experience and gather
-          anonymized data about website usage.
-        </p>
+            <p>
+              Payments are handled securely by Stripe. We do not store your
+              credit card or full payment information on our system. Stripe
+              sends us only the order details and shipping information required
+              to prepare and mail your greeting cards.
+            </p>
 
-        <p>
-          You have the right to access, update, or request deletion of your
-          personal information by contacting us at
-          <span className="font-medium"> support@quillingartist.com</span>.
-        </p>
+            <p>
+              We use your information only for order fulfillment, shipping, and
+              customer service. We may also use cookies or similar technologies
+              to support website functionality and to gather general,
+              non-personal website usage information.
+            </p>
 
-        <p>
-          For further details on how we handle your data, please review our full
-          Privacy Policy.
-        </p>
-      </div>
+            <p>
+              We do not sell or share your personal information with third
+              parties except as needed to complete your order and provide our
+              services. If you have any questions about this Privacy Statement,
+              please contact us at{" "}
+              <span className="font-semibold text-gray-900">
+                support@quillingartist.com
+              </span>
+              .
+            </p>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };

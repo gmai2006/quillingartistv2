@@ -73,10 +73,10 @@ const Footer = () => {
             <h6 className="text-lg font-semibold text-white">Customer Care</h6>
             <hr className="my-4 border-gray-700" />
             <div className="flex flex-col space-y-4">
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-gray-400" />
                 <span>+1800 100 1000</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-gray-400" />
                 <span>support@quillingartist.com</span>

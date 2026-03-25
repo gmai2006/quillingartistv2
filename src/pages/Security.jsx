@@ -3,35 +3,57 @@ import { Lock } from "lucide-react";
 
 export const Security = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="flex items-center gap-3 mb-6">
-        <Lock className="w-7 h-7 text-gray-700" />
-        <h1 className="text-3xl font-bold tracking-tight">Security</h1>
-      </div>
+    <div className="min-h-screen flex flex-col bg-white">
+      <main className="flex-1 w-full">
+        <div className="max-w-3xl mx-auto px-6 py-14 md:px-8 md:py-20">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
+              <Lock className="w-6 h-6 text-gray-700" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+              Security
+            </h1>
+          </div>
 
-      <div className="space-y-4 text-gray-700 leading-relaxed">
-        <p>
-          At Quilling Artist, we are committed to protecting the privacy and
-          security of your personal information.
-        </p>
+          <div className="space-y-8 text-[18px] md:text-[19px] leading-9 text-gray-700">
+            <p>
+              At Quilling Artist, we are committed to protecting the security of
+              your personal information. We use reasonable administrative,
+              technical, and physical safeguards designed to protect the
+              information we receive against unauthorized access, disclosure,
+              alteration, or destruction.
+            </p>
 
-        <p>
-          We utilize industry-standard security measures to safeguard your data,
-          including robust encryption protocols like SSL, secure servers, and
-          regular vulnerability scans.
-        </p>
+            <p>
+              Payments are processed securely by Stripe, and we do not store
+              your credit card or full payment details on our systems. We
+              receive only the order and shipping information necessary to
+              fulfill your purchase.
+            </p>
 
-        <p>
-          Access to sensitive information is restricted to authorized personnel
-          only, and we continuously monitor our systems for suspicious activity
-          to prevent unauthorized access.
-        </p>
+            <p>
+              Access to personal information is limited to authorized
+              individuals who need it for order processing, shipping, or
+              customer service. We also use secure website technologies and
+              other appropriate protections to help maintain the security of our
+              site.
+            </p>
 
-        <p>
-          By using our website, you agree to our privacy policy outlining how we
-          collect, store, and use your information.
-        </p>
-      </div>
+            <p>
+              Although no online system can guarantee absolute security, we take
+              commercially reasonable steps to protect the information entrusted
+              to us.
+            </p>
+
+            <p>
+              By using our website, you acknowledge our Privacy Policy and our
+              practices for handling personal information.
+            </p>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
+
+export default Security;
