@@ -21,7 +21,8 @@ const Header = ({ allproducts, count, setSearchData }) => {
         <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between">
           
           {/* Logo Section */}
-          <div className="flex shrink-0 items-center justify-center md:w-1/4">
+          {/* FIX: Added md:justify-start so it aligns left on desktop */}
+          <div className="flex shrink-0 items-center justify-center md:justify-start md:w-1/4">
             <Link to="/" className="flex items-center gap-2 text-xl font-bold text-gray-800 hover:opacity-80">
               <img
                 alt="logo"
