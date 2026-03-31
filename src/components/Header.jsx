@@ -41,13 +41,21 @@ const Header = ({ allproducts, count, setSearchData }) => {
           {/* Cart Section */}
           <div className="flex justify-center md:w-1/4 md:justify-end">
             <div className="relative">
-              <Link 
-                to="/cart" 
-                className="inline-flex items-center rounded-lg bg-blue-600 p-2 text-white transition-colors hover:bg-blue-700 shadow-sm"
-              >
-                <ShoppingCart className="h-6 w-6" />
-                <ShoppingCartIcon count={count} />
-              </Link>
+              {count > 0 ? (
+                  <Link
+                      to="/cart"
+                      className="inline-flex items-center rounded-lg bg-blue-600 p-2 text-white transition-colors hover:bg-blue-700 shadow-sm"
+                  >
+                    <ShoppingCart className="h-6 w-6" />
+                    <ShoppingCartIcon count={count} />
+                  </Link>
+              ) : (
+                  <div
+                      className="inline-flex cursor-not-allowed items-center rounded-lg bg-gray-400 p-2 text-white opacity-60 shadow-sm"
+                  >
+                    <ShoppingCart className="h-6 w-6" />
+                  </div>
+              )}
             </div>
           </div>
 
