@@ -3,8 +3,7 @@ import { Lock } from "lucide-react";
 
 export const Security = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <main className="flex-1 w-full">
+    <div className="bg-white">
         <div className="max-w-3xl mx-auto px-6 py-14 md:px-8 md:py-20">
           <div className="flex items-center gap-4 mb-10">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
@@ -51,7 +50,6 @@ export const Security = () => {
             </p>
           </div>
         </div>
-      </main>
     </div>
   );
 };

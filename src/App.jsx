@@ -42,34 +42,42 @@ const App = () => {
 
   return (
 
-    <BrowserRouter>
-      <Header allproducts={products} count={count} setSearchData={setSearchData} />
-      <TopMenu />
-      <Suspense
-        fallback={
-          <div className="text-white text-center mt-3">Loading...</div>
-        }
-      >
-        <Routes>
-          <Route path="" element={<ProductList allproducts={products} />} />
-          <Route path="product/detail/:id" element={<ProductDetail allproducts={products} shoppingCart={shoppingCart} updateCount={setCount} />} />
-          <Route path="category/:cat" element={<ProductList allproducts={products} />} />
-          <Route path="cart" element={<CartView shoppingCart={shoppingCart} updateCount={setCount} />} />
-          <Route path="checkout" element={<CheckoutView shoppingCart={shoppingCart} count={count} />} />
-          <Route path="documentation" element={<DocumentationView />} />
-          <Route path="contact-us" element={<ContactUsView />} />
-          <Route path="support" element={<SupportView />} />
-          <Route path="return" element={<ReturnPolicy />} />
-          <Route path="privacy" element={<Privacy />} />
-          <Route path="term" element={<TermUse />} />
-          <Route path="security" element={<Security />} />
-          <Route path="500" element={<InternalServerErrorView />} />
-          <Route path="searchResult" element={<SearchResult allproducts={products} searchData={searchData} />} />
-          <Route element={<NotFoundView />} />
-        </Routes>
-      </Suspense>
-      <Footer allproducts={products} />
-    </BrowserRouter>
+      <BrowserRouter>
+          <div className="flex min-h-screen flex-col">
+              <Header
+                  allproducts={products}
+                  count={count}
+                  setSearchData={setSearchData}
+              />
+              <TopMenu />
+              <Suspense
+                  fallback={
+                      <div className="text-white text-center mt-3">Loading...</div>
+                  }
+              >
+                  <main className="flex-1 container mx-auto px-4 py-6">
+                      <Routes>
+                          <Route path="" element={<ProductList allproducts={products} />} />
+                          <Route path="product/detail/:id" element={<ProductDetail allproducts={products} shoppingCart={shoppingCart} updateCount={setCount} />} />
+                          <Route path="category/:cat" element={<ProductList allproducts={products} />} />
+                          <Route path="cart" element={<CartView shoppingCart={shoppingCart} updateCount={setCount} />} />
+                          <Route path="checkout" element={<CheckoutView shoppingCart={shoppingCart} count={count} />} />
+                          <Route path="documentation" element={<DocumentationView />} />
+                          <Route path="contact-us" element={<ContactUsView />} />
+                          <Route path="support" element={<SupportView />} />
+                          <Route path="return" element={<ReturnPolicy />} />
+                          <Route path="privacy" element={<Privacy />} />
+                          <Route path="term" element={<TermUse />} />
+                          <Route path="security" element={<Security />} />
+                          <Route path="500" element={<InternalServerErrorView />} />
+                          <Route path="searchResult" element={<SearchResult allproducts={products} searchData={searchData} />} />
+                          <Route element={<NotFoundView />} />
+                      </Routes>
+                  </main>
+              </Suspense>
+              <Footer />
+          </div>
+      </BrowserRouter>
 
   );
 }
